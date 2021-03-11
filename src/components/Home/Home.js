@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Leagues from '../Clubs/Clubs';
-import './Home.css'
+import './Home.css';
 
 const Home = () => {
-    const [leagues, setLeagues] = useState([]);
+    const [Clubs, setClubs] = useState([]);
 
     useEffect(() => {
         fetch('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League')
             .then(response => response.json())
-            .then(data => setLeagues(data.teams))
+            .then(data => setClubs(data.teams))
     }, []);
 
     const shuffle = a => {
@@ -17,10 +17,10 @@ const Home = () => {
             [a[i - 1], a[j]] = [a[j], a[i - 1]];
         }
     }
+ 
+    shuffle(Clubs);
 
-    shuffle(leagues);
-
-    const topImage = leagues[0] && leagues[0].strStadiumThumb;
+    const topImage = Clubs[0] && Clubs[0].strStadiumThumb;
 
     return (
         <div className='home-container'>
@@ -31,7 +31,7 @@ const Home = () => {
             <div className="container mt-5">
                 <div className="row justify-content-center">
                     {
-                        leagues.map(le => <Leagues leagues={le} key={le.idAPIfootball}></Leagues>)
+                        Clubs.map(Club => <Leagues Club={Club} key={Club.idAPIfootball}></Leagues>)
                     }
                 </div>
             </div>

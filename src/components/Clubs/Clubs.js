@@ -5,9 +5,9 @@ import { useHistory } from 'react-router';
 
 const arrayicon = <FontAwesomeIcon icon={faLongArrowAltRight} />
 
-const Leagues = (props) => {
+const Clubs = (props) => {
 
-    const { strTeamBadge, idTeam, strSport, strTeam } = props.leagues;
+    const { strTeamBadge, idTeam, strSport, strTeam } = props.Club;
 
     const history = useHistory();
 
@@ -25,4 +25,4 @@ const Leagues = (props) => {
     );
 };
 
-export default Leagues;
+export default Clubs;

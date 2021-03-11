@@ -18,20 +18,20 @@ const faflagIcon = <FontAwesomeIcon icon={faFlag} />
 const faFondedIcon = <FontAwesomeIcon icon={faMapMarkerAlt} />
 
 
-const LookupLeague = () => {
+const LookupClub = () => {
 
     const { idTeam } = useParams();
 
-    const [league, setLeague] = useState([])
+    const [club, setClub] = useState([])
 
     const { strGender, intFormedYear, strCountry, strSport, strTwitter, strFacebook, strYoutube,
-        strStadiumThumb, strDescriptionEN, strStadiumDescription, strTeamBadge, strTeam } = league;
+        strStadiumThumb, strDescriptionEN, strStadiumDescription, strTeamBadge, strTeam } = club;
 
 
     useEffect(() => {
         fetch(`https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${idTeam}`)
             .then(response => response.json())
-            .then(data => setLeague(data.teams[0]))
+            .then(data => setClub(data.teams[0]))
     }, [idTeam]);
 
 
@@ -79,4 +79,4 @@ const LookupLeague = () => {
     );
 };
 
-export default LookupLeague;
+export default LookupClub;
