@@ -1,0 +1,18 @@
+.home-container {
+  background: linear-gradient(to bottom, #a8a6ad, #e9e4f0);
+}
+.topimage {
+  height: 25vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.topimage h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

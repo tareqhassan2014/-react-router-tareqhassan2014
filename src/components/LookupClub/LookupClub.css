@@ -1,0 +1,29 @@
+.lookupclubImg {
+  height: 25vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.lookupclubImg img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+}
+.lookupclubimg img {
+  width: 100%;
+}
+.card-body p {
+  margin-bottom: 0px;
+}
+
+.socialLogo{
+  color: red;
+} 
+.socialLogo:hover{
+  color: rgb(192, 12, 12);
+}
