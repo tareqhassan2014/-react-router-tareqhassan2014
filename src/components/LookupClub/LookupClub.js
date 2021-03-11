@@ -2,8 +2,9 @@ import './LookupClub.css';
 import male from "../../Photo/male.png";
 import female from "../../Photo/female.png";
 import { useParams } from 'react-router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMars, faFutbol, faMapMarkerAlt, faFlag } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faYoutube, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,10 +12,14 @@ import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 const faFacebookIcon = <FontAwesomeIcon icon={faFacebook} size='3x' />
 const faYoutubeIcon = <FontAwesomeIcon icon={faYoutube} size='3x' />
 const faTwitterIcon = <FontAwesomeIcon icon={faTwitter} size='3x' />
+const faGenderIcon = <FontAwesomeIcon icon={faMars} />
+const faFootballIcon = <FontAwesomeIcon icon={faFutbol} />
+const faflagIcon = <FontAwesomeIcon icon={faFlag} />
+const faFondedIcon = <FontAwesomeIcon icon={faMapMarkerAlt} />
 
 
 const LookupLeague = () => {
-    
+
     const { idTeam } = useParams();
 
     const [league, setLeague] = useState([])
@@ -31,7 +36,7 @@ const LookupLeague = () => {
 
 
     return (
-        <div>
+        <div className="bg-dark text-white">
             <div className="lookupclubImg" style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${strStadiumThumb})` }}>
                 <img src={strTeamBadge} alt="" />
             </div>
@@ -43,14 +48,14 @@ const LookupLeague = () => {
                         <div className="col-md-8">
                             <div className="card-body">
                                 <h1 className="card-title">{strTeam}</h1>
-                                <p> Founded: {intFormedYear}</p>
-                                <p> Sports Type: {strSport}</p>
-                                <p>Country: {strCountry}</p>
-                                <p>Gender: {strGender}</p>
+                                <p>{faFondedIcon} Founded: {intFormedYear}</p>
+                                <p>{faflagIcon} Country: {strCountry}</p>
+                                <p>{faFootballIcon} Sports Type: {strSport}</p>
+                                <p>{faGenderIcon} Gender: {strGender}</p>
                             </div>
                         </div>
                         <div className="col-md-4 lookupclubimg">
-                            {(strGender === "Male") ? <img src={male} alt="" /> : <img src={female} alt="" />}
+                            {strGender && ((strGender === "Male") ? <img src={male} alt="" /> : <img src={female} alt="" />)}
                         </div>
                     </div>
                 </div>
@@ -58,7 +63,7 @@ const LookupLeague = () => {
                 <p>{strDescriptionEN}</p>
                 <br />
                 <p>{strStadiumDescription}</p>
-                <div className="d-flex justify-content-center mb-5">
+                <div className="d-flex justify-content-center py-5">
                     <div className="px-3">
                         <a href={`https://${strFacebook}`}>{faFacebookIcon}</a>
                     </div>

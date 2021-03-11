@@ -12,7 +12,7 @@ const Leagues = (props) => {
     const history = useHistory();
 
     return (
-        <div className="col-md-3 col-sm-6 my-3">
+        <div className="col-md-3 col-sm-12 my-3 " style={{ width: "268px" }} >
             <div className="card text-center" style={{ width: "15rem" }}>
                 <img src={strTeamBadge} className="card-img-top" alt="..." />
                 <div className="card-body">
@@ -21,7 +21,7 @@ const Leagues = (props) => {
                     <button onClick={() => history.push(`/club/${idTeam}`)} className="btn btn-secondary">Explore <span>{arrayicon}</span></button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

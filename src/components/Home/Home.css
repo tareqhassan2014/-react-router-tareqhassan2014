@@ -9,6 +9,7 @@
   text-align: center;
   color: white;
   position: relative;
+  max-width: 100%;
 }
 .topimage h1 {
   position: absolute;
